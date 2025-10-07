@@ -1,12 +1,13 @@
 import { Row } from "./components/Row";
+import { Banner} from "./components/Banner";
 import requests from "./apiConfig";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Vamos Contruir o Clone da Netflix</h1>
-
+      <Banner />      
+      
       <Row
         title="Originais Netflix"
         fetchUrl="resquest.fetchNetFliixOriginals"

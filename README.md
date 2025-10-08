@@ -14,20 +14,15 @@ Projeto que replica a interface principal da Netflix com listagem de categorias,
 - `Row` busca os filmes/séries, renderiza as capas e permite rolar por categoria com setas. Ao clicar em um card, abre um painel de detalhes logo abaixo da linha com overview, nota, datas e trailer embutido (via `movie-trailer` + `react-youtube`).
 - O `Banner` seleciona aleatoriamente um item dos originais Netflix e aplica seu `backdrop_path` como imagem de fundo. Os botões "Assistir" e "Minha Lista" possuem funcionalidades: reproduzir trailer e salvar no `localStorage`.
 
-## Tecnologias
+## Tecnologias utilizadas
 
-### Front-end
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> React
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Vite
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TypeScript
-- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/axios.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Axios
-- <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/YouTube_Icon.png" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> React YouTube
-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> CSS (arquivos .css)
-
-### Back-end
-- <img src="https://www.themoviedb.org/assets/2/apple-touch-icon-0de2c1a382b7e4fb0e5bdcce84a8d8b0d8d70c980bafa5327c119cbb5cb6b91d.png" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TMDB API (consumo de API pública)
-
-Observação: Não há servidor próprio neste projeto. O "back-end" aqui refere-se à API de terceiros (TMDB) utilizada para obter dados.
+- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/master/icons/axios.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Axios
+- <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/YouTube_Icon.png" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> YouTube (react-youtube)
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> CSS
+- <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/The_Movie_Database_%28TMDb%29_Logo.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TMDB API
 
 ## Estrutura de Pastas
 - `src/axios.ts`: instancia do `axios` com `baseURL` para TMDB.

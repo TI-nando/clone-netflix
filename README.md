@@ -82,8 +82,3 @@ Projeto que replica a interface principal da Netflix com listagem de categorias,
 - Se não houver conteúdo suficiente para rolar, as setas não aparecem, indicando o extremo.
  - Clique em um card para ver mais detalhes e trailer embutido.
  - No banner, use "Assistir" para ver o trailer e "Minha Lista" para salvar o título.
-
-## Próximos passos (sugestões)
-- Adicionar skeleton loaders durante o fetch.
-- Paginação/infinit scroll por categoria.
-- Cache local leve (ex.: SWR/React Query) para evitar refetch redundante.

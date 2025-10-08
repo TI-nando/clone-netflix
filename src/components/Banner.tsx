@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import axios from "../axios";
 import requests from "../apiConfig";
 import "./Banner.css";
+import YouTube from "react-youtube";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import movieTrailer from "movie-trailer";
 
 type Movie = {
   id: number;

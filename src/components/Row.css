@@ -132,3 +132,33 @@
   color: #aaa;
   font-size: 0.9rem;
 }
+
+/* Responsividade Row */
+@media (max-width: 1024px) {
+  .row__poster { max-height: 90px; }
+  .row__posterLarge { max-height: 220px; }
+}
+
+@media (max-width: 768px) {
+  .row { margin-left: 12px; }
+  .row__posters { padding: 12px; }
+  .arrow-icon { font-size: 2rem; }
+  .slider__arrow { width: 40px; }
+  .row__details-content {
+    grid-template-columns: 1fr; /* trailer acima, info abaixo */
+  }
+}
+
+@media (max-width: 480px) {
+  .row__poster { max-height: 80px; margin-right: 8px; }
+  .row__posterLarge { max-height: 180px; }
+  .row__details { padding: 12px; }
+  .row__details-title { font-size: 1.05rem; }
+  .row__details-close { padding: 5px 8px; }
+}
+
+.row__details-trailer iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}

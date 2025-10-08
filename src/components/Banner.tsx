@@ -83,7 +83,7 @@ export function Banner() {
 
       <div className="banner--fadeBottom" />
       {bannerTrailer && (
-        <div style={{ padding: "0 30px 20px" }}>
+        <div className="banner__trailer">
           <YouTube videoId={bannerTrailer} opts={{ height: "360", width: "100%", playerVars: { autoplay: 1 } }} />
         </div>
       )}

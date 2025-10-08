@@ -62,3 +62,38 @@
     #111
   );
 }
+
+/* Responsividade Banner */
+@media (max-width: 1024px) {
+  .banner { height: 400px; }
+  .banner__contents { padding-top: 120px; margin-left: 24px; }
+  .banner__title { font-size: 2.5rem; }
+  .banner__description { width: 38rem; max-width: 80%; height: auto; }
+  .banner__button { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .banner { height: 360px; }
+  .banner__contents { padding-top: 100px; margin-left: 20px; }
+  .banner__title { font-size: 2rem; }
+  .banner__description { width: 32rem; max-width: 90%; font-size: 0.9rem; }
+  .banner__button { margin-right: 0.75rem; }
+}
+
+@media (max-width: 480px) {
+  .banner { height: 300px; }
+  .banner__contents { padding-top: 80px; margin-left: 16px; }
+  .banner__title { font-size: 1.6rem; }
+  .banner__description { width: 100%; max-width: 92%; font-size: 0.85rem; }
+  .banner__button { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
+
+.banner__trailer {
+  padding: 0 16px 20px;
+}
+
+.banner__trailer iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}

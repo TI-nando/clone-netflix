@@ -28,13 +28,13 @@ Projeto que replica a interface principal da Netflix com listagem de categorias,
 
 ## Tecnologias utilizadas
 
-- <img src="https://cdn.simpleicons.org/react" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> React
-- <img src="https://cdn.simpleicons.org/vite" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Vite
-- <img src="https://cdn.simpleicons.org/typescript" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TypeScript
-- <img src="https://cdn.simpleicons.org/axios" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Axios
-- <img src="https://cdn.simpleicons.org/youtube" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> YouTube (react-youtube)
-- <img src="https://cdn.simpleicons.org/css3" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> CSS
-- <img src="https://cdn.simpleicons.org/themoviedatabase" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TMDB API
+- <img src="src/assets/tech-icons/react.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> React
+- <img src="src/assets/tech-icons/vite.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Vite
+- <img src="src/assets/tech-icons/typescript.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TypeScript
+- <img src="src/assets/tech-icons/axios.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Axios
+- <img src="src/assets/tech-icons/youtube.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> YouTube (react-youtube)
+- <img src="src/assets/tech-icons/css3.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> CSS
+- <img src="src/assets/tech-icons/tmdb.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TMDB API
 
 ## Estrutura de Pastas
 - `src/axios.ts`: instancia do `axios` com `baseURL` para TMDB.

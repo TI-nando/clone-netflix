@@ -2,6 +2,18 @@
 
 Projeto que replica a interface principal da Netflix com listagem de categorias, banner dinâmico e exibição de trailers via YouTube. Construído com React + Vite e integração à API do TMDB.
 
+## Sumário
+- Visão Geral
+- Tecnologias utilizadas
+- Como funciona
+- Estrutura de Pastas
+- Scripts
+- Passo a passo para rodar
+- Novas funcionalidades
+- Dicas de uso
+- Melhorias de desempenho aplicadas
+- Próximos passos
+
 ## Visão Geral
 - Navegação com barra que muda de cor ao rolar.
 - Banner dinâmico que exibe um título aleatório dos originais Netflix.
@@ -16,13 +28,13 @@ Projeto que replica a interface principal da Netflix com listagem de categorias,
 
 ## Tecnologias utilizadas
 
-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> React
-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Vite
-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TypeScript
-- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/master/icons/axios.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Axios
-- <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/YouTube_Icon.png" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> YouTube (react-youtube)
-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> CSS
-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/The_Movie_Database_%28TMDb%29_Logo.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TMDB API
+- <img src="https://cdn.simpleicons.org/react" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> React
+- <img src="https://cdn.simpleicons.org/vite" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Vite
+- <img src="https://cdn.simpleicons.org/typescript" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TypeScript
+- <img src="https://cdn.simpleicons.org/axios" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Axios
+- <img src="https://cdn.simpleicons.org/youtube" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> YouTube (react-youtube)
+- <img src="https://cdn.simpleicons.org/css3" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> CSS
+- <img src="https://cdn.simpleicons.org/themoviedatabase" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TMDB API
 
 ## Estrutura de Pastas
 - `src/axios.ts`: instancia do `axios` com `baseURL` para TMDB.

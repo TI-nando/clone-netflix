@@ -15,15 +15,18 @@ type Movie = {
 
 export function Banner() {
   const [movie, setMovie] = useState<Movie | null>(null);
+  const [bannerTrailer, setBannerTrailer] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);
-      setMovie(
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
-      );
+      const results = request.data.results || [];
+      if (results.length > 0) {
+        const index = Math.floor(Math.random() * results.length);
+        setMovie(results[index]);
+      } else {
+        setMovie(null);
+      }
       return request;
     }
     fetchData();
@@ -38,7 +41,9 @@ export function Banner() {
       className="banner"
       style={{
         backgroundSize: "cover",
-        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
+        backgroundImage: movie?.backdrop_path
+          ? `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`
+          : undefined,
         backgroundPosition: "center center",
       }}
     >
@@ -47,8 +52,25 @@ export function Banner() {
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
         <div className="banner__buttons">
-          <button className="banner__button">Assistir</button>
-          <button className="banner__button">Minha Lista</button>
+          <button className="banner__button" onClick={async () => {
+            if (!movie) return;
+            try {
+              const url = await movieTrailer(movie?.name || movie?.title || movie?.original_name || "");
+              const urlParams = new URLSearchParams(new URL(url).search);
+              setBannerTrailer(urlParams.get("v"));
+            } catch (e) {
+              console.log(e);
+            }
+          }}>Assistir</button>
+          <button className="banner__button" onClick={() => {
+            if (!movie) return;
+            const listKey = "my_list";
+            const current = JSON.parse(localStorage.getItem(listKey) || "[]");
+            const exists = current.some((m: Movie) => m.id === movie.id);
+            const next = exists ? current : [...current, movie];
+            localStorage.setItem(listKey, JSON.stringify(next));
+            alert(exists ? "Já está na sua lista" : "Adicionado à minha lista");
+          }}>Minha Lista</button>
         </div>
         <h1 className="banner__description">
           {truncate(movie?.overview, 150)}
@@ -56,6 +78,11 @@ export function Banner() {
       </div>
 
       <div className="banner--fadeBottom" />
+      {bannerTrailer && (
+        <div style={{ padding: "0 30px 20px" }}>
+          <YouTube videoId={bannerTrailer} opts={{ height: "360", width: "100%", playerVars: { autoplay: 1 } }} />
+        </div>
+      )}
     </header>
   );
 }

@@ -11,21 +11,21 @@ Projeto que replica a interface principal da Netflix com listagem de categorias,
 ## Como funciona
 - O cliente consome endpoints do TMDB (`/discover`, `/trending`, `/movie/top_rated` etc.) através de um `axios` pré-configurado com `baseURL`.
 - As categorias são definidas em `src/apiConfig.ts` e passadas para o componente `Row`.
-- `Row` busca os filmes/series, renderiza as capas e permite rolar por categoria com setas. O click tenta localizar um trailer com a lib `movie-trailer` e renderiza via `react-youtube`.
-- O `Banner` seleciona aleatoriamente um item dos originais Netflix e aplica seu `backdrop_path` como imagem de fundo.
+- `Row` busca os filmes/séries, renderiza as capas e permite rolar por categoria com setas. Ao clicar em um card, abre um painel de detalhes logo abaixo da linha com overview, nota, datas e trailer embutido (via `movie-trailer` + `react-youtube`).
+- O `Banner` seleciona aleatoriamente um item dos originais Netflix e aplica seu `backdrop_path` como imagem de fundo. Os botões "Assistir" e "Minha Lista" possuem funcionalidades: reproduzir trailer e salvar no `localStorage`.
 
 ## Tecnologias
 
 ### Front-end
-- ![React](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg) React
-- ![Vite](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg) Vite
-- ![TypeScript](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg) TypeScript
-- ![Axios](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg) Axios
-- ![YouTube](https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png) React YouTube
-- ![CSS3](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg) CSS Modules simples
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> React
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Vite
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TypeScript
+- <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/axios.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> Axios
+- <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/YouTube_Icon.png" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> React YouTube
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> CSS (arquivos .css)
 
 ### Back-end
-- ![TMDB](https://www.themoviedb.org/assets/2/apple-touch-icon-0de2c1a382b7e4fb0e5bdcce84a8d8b0d8d70c980bafa5327c119cbb5cb6b91d.png) TMDB API (consumo de API pública)
+- <img src="https://www.themoviedb.org/assets/2/apple-touch-icon-0de2c1a382b7e4fb0e5bdcce84a8d8b0d8d70c980bafa5327c119cbb5cb6b91d.png" width="26" height="26" style="vertical-align:middle; margin-right:6px;" /> TMDB API (consumo de API pública)
 
 Observação: Não há servidor próprio neste projeto. O "back-end" aqui refere-se à API de terceiros (TMDB) utilizada para obter dados.
 
@@ -53,18 +53,28 @@ Observação: Não há servidor próprio neste projeto. O "back-end" aqui refere
 - Correção do cálculo aleatório no Banner, evitando índices inválidos.
 - Ajuste do `fetchUrl` dos Originais Netflix no `App.tsx` para evitar requisições quebradas.
 
-## Novas funcionalidades (setas estilo Netflix)
-- Setas sempre visíveis (desktop e mobile), com destaque em hover.
-- Ocultação automática nos extremos: a seta esquerda some ao chegar no início e a direita ao chegar no fim.
-- Clique por “página”: um clique rola a largura visível do carrossel.
-- Press-and-hold (desktop): segurar o clique na seta inicia rolagem contínua, soltou/parou.
-- Toque contínuo (mobile): tocar e segurar rola continuamente; soltar interrompe.
-- Alinhamento natural dos itens com `scroll-snap` no container e nos cards.
+## Novas funcionalidades
+- Setas no carrossel (estilo Netflix):
+  - Sempre visíveis (desktop e mobile), com destaque em hover.
+  - Ocultação automática nos extremos: esquerda no início, direita no fim.
+  - Clique por “página”: rola a largura visível do carrossel.
+  - Press-and-hold (desktop) e toque contínuo (mobile) para rolagem contínua.
+  - Alinhamento natural com `scroll-snap` no container e nos cards.
+- Painel de detalhes na Row:
+  - Ao clicar em um card, abre painel com overview, nota e datas.
+  - Trailer embutido via YouTube; botão "Fechar" para ocultar.
+- Botões do Banner:
+  - "Assistir": busca e reproduz o trailer abaixo do banner.
+  - "Minha Lista": salva o título atual no `localStorage` (evita duplicados) e exibe feedback.
+- Logo da Netflix:
+  - Clique na logo recarrega a página para atualizar os conteúdos.
 
 ### Dicas de uso
 - Desktop: clique e segure nas setas para rolagem contínua; clique simples para rolagem por página.
 - Mobile: toque e segure para rolar; um toque rápido desloca uma página.
 - Se não houver conteúdo suficiente para rolar, as setas não aparecem, indicando o extremo.
+ - Clique em um card para ver mais detalhes e trailer embutido.
+ - No banner, use "Assistir" para ver o trailer e "Minha Lista" para salvar o título.
 
 ## Próximos passos (sugestões)
 - Adicionar skeleton loaders durante o fetch.

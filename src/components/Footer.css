@@ -1,0 +1,44 @@
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #aaa;
+  padding: 20px 30px;
+  margin-top: 24px;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__logo {
+  font-weight: 600;
+  color: #fff;
+}
+
+.footer__links {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__links a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footer__links a:hover {
+  color: #fff;
+}
+
+.footer__note {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #999;
+}

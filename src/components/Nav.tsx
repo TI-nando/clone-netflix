@@ -24,6 +24,7 @@ export function Nav() {
           className="nav__logo"
           src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
           alt="Netflix Logo"
+          onClick={() => window.location.reload()}
         />
 
         <img
